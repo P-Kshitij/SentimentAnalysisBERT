@@ -24,6 +24,6 @@ class BERTBaseUncased(nn.Module):
             token_type_ids=token_type_ids 
         )
         
-        bert_out = self.bert_dropout(out2)
+        bert_out = self.bert_drop(out2)
         output  = self.out(bert_out)
         return output

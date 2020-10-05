@@ -1,6 +1,7 @@
 import config
 import dataset
 import torch
+import engine
 import pandas as pd
 
 from model import BERTBaseUncased
@@ -39,7 +40,7 @@ def run():
 
     valid_dataset = dataset.BERTDataset(
         review=df_valid.review.values,
-        target=df_valid.target.values
+        target=df_valid.sentiment.values
     )
 
     valid_data_loader = torch.utils.data.DataLoader(
